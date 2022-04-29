@@ -1,4 +1,7 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
+
+import 'package:mealfit/src/models/itens.dart';
 
 enum tipoMeal {
   cafeDamanha,
@@ -15,16 +18,15 @@ class Meals {
   final int idMeal;
   final String tipoRefeicao;
   final String name;
-  final double pesoPronto;
-  final double pesoCru;
-  final String objective;
+  final double duracao;
+  final List<Item> itens;
+
   Meals({
     required this.idMeal,
     required this.tipoRefeicao,
     required this.name,
-    required this.pesoPronto,
-    required this.pesoCru,
-    required this.objective,
+    required this.duracao,
+    required this.itens,
   });
 
   Map<String, dynamic> toMap() {
@@ -32,9 +34,8 @@ class Meals {
       'idMeal': idMeal,
       'tipoRefeicao': tipoRefeicao,
       'name': name,
-      'pesoPronto': pesoPronto,
-      'pesoCru': pesoCru,
-      'objective': objective,
+      'duracao': duracao,
+      'itens': itens.map((x) => x.toMap()).toList(),
     };
   }
 
@@ -43,9 +44,12 @@ class Meals {
       idMeal: map['idMeal'] as int,
       tipoRefeicao: map['tipoRefeicao'] as String,
       name: map['name'] as String,
-      pesoPronto: map['pesoPronto'] as double,
-      pesoCru: map['pesoCru'] as double,
-      objective: map['objective'] as String,
+      duracao: map['duracao'] as double,
+      itens: List<Item>.from(
+        (map['itens'] as List<int>).map<Item>(
+          (x) => Item.fromMap(x as Map<String, dynamic>),
+        ),
+      ),
     );
   }
 
