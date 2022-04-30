@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:mealfit/src/controllers/app_page_routes.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -10,6 +11,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  void _signUp(BuildContext context) {
+    Navigator.of(context).pushNamed(AppRoutes.HIDDEN_DRAWER);
+  }
+
   @override
   Widget build(BuildContext context) {
     final deviceSize = MediaQuery.of(context).size;
@@ -20,6 +25,10 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const Icon(
+                Icons.lunch_dining_outlined,
+                size: 100,
+              ),
               const SizedBox(height: 10),
               const Text(
                 'Ola Denovo!',
@@ -77,7 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(
                 height: 15,
               ),
-              Container(
+              SizedBox(
                 height: 60,
                 width: deviceSize.width * 0.89,
                 child: ElevatedButton(
@@ -93,6 +102,23 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text('Ainda nao possui cadastro?'),
+                  GestureDetector(
+                      child: const Text(
+                        '/Cadastre-se',
+                        style: TextStyle(color: Colors.blue),
+                      ),
+                      onTap: () {
+                        _signUp(context);
+                      }),
+                ],
+              )
             ],
           ),
         ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mealfit/src/views/login.dart';
+import 'package:mealfit/src/controllers/app_page_routes.dart';
+import 'package:mealfit/src/views/hidden_drawer.dart';
 import 'package:mealfit/src/views/login_sceen.dart';
+import 'package:mealfit/src/views/meals_home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,9 +18,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
       ),
-      home: const LoginScreen(),
+      routes: {
+        AppRoutes.HOME: (ctx) => const LoginScreen(),
+        AppRoutes.MEALS_SCREEN: (ctx) => const MealsHome(),
+        AppRoutes.HIDDEN_DRAWER: (ctx) => const HiddenDrawer(),
+      },
     );
   }
 }
