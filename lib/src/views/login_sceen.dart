@@ -91,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: deviceSize.width * 0.89,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      primary: Colors.purple,
+                      primary: const Color.fromARGB(255, 152, 110, 224),
                       onPrimary: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20))),
@@ -112,7 +112,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   GestureDetector(
                       child: const Text(
                         '/Cadastre-se',
-                        style: TextStyle(color: Colors.blue),
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 152, 110, 224)),
                       ),
                       onTap: () {
                         _signUp(context);
