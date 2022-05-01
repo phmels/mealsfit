@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mealfit/src/controllers/app_page_routes.dart';
 import 'package:mealfit/src/views/hidden_drawer.dart';
 import 'package:mealfit/src/views/login_sceen.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.purple,
+        textTheme: GoogleFonts.kalamTextTheme(),
       ),
       routes: {
         AppRoutes.HOME: (ctx) => const LoginScreen(),
