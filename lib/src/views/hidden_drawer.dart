@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
+import 'package:mealfit/src/views/foods_screen.dart';
 import 'package:mealfit/src/views/login_sceen.dart';
 import 'package:mealfit/src/views/meals_home.dart';
 
@@ -35,7 +36,7 @@ class _MealsHomeState extends State<HiddenDrawer> {
           baseStyle: myStectStyle,
           selectedStyle: myStectStyle,
         ),
-        const MealsHome(),
+        const FoodsScreen(),
       ),
     ];
   }
@@ -45,7 +46,8 @@ class _MealsHomeState extends State<HiddenDrawer> {
     return HiddenDrawerMenu(
       screens: _pages,
       initPositionSelected: 0,
-      backgroundColorMenu: Color.fromARGB(255, 152, 110, 224),
+      backgroundColorMenu: const Color.fromARGB(255, 152, 110, 224),
+      backgroundColorAppBar: const Color.fromARGB(255, 152, 110, 224),
     );
   }
 }
