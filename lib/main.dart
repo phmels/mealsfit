@@ -21,6 +21,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
         textTheme: GoogleFonts.kalamTextTheme(),
+        colorScheme: const ColorScheme(
+            brightness: Brightness.dark,
+            primary: Color.fromARGB(255, 152, 110, 224),
+            onPrimary: Colors.orange,
+            secondary: Colors.black,
+            onSecondary: Colors.white,
+            error: Color.fromARGB(255, 122, 42, 37),
+            onError: Colors.orange,
+            background: Colors.green,
+            onBackground: Colors.orange,
+            surface: Colors.orange,
+            onSurface: Colors.white),
       ),
       routes: {
         AppRoutes.HOME: (ctx) => const LoginScreen(),

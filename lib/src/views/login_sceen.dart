@@ -113,7 +113,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: const Text(
                         '/Cadastre-se',
                         style: TextStyle(
-                            color: Color.fromARGB(255, 152, 110, 224)),
+                          color: Color.fromARGB(255, 152, 110, 224),
+                        ),
                       ),
                       onTap: () {
                         _signUp(context);
